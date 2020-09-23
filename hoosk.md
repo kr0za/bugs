@@ -10,7 +10,7 @@ Windows
 
 ### 0x01 install rce
 
-At `install/index.php:55，user input was saved to config.php causing RCE.
+At `install/index.php:55`，user input was saved to config.php causing RCE.
 
 
 
